@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#app{
+   
+    margin: auto;
+    text-align: center;
+    align-content: center;
+
+}
+.header{
+    background: rgb(236, 62, 31);
+    height: 2.5rem;
+
+}
+.website{
+    text-decoration: none;
+    font-size: 1rem;
+    color:white
+}
+.main-section {
+    margin-top: 2rem;
+}
+.pincode{
+    font-size: 1.5rem;
+    border-top-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    max-width: 200px;
+    box-shadow: 2px 4px 8px gray;
+   
+   
+    
+}
+.pincode:focus{
+    outline: none;
+    background: rgba(156, 147, 241, 0.5)
+}
+.sumbitBtn{
+    font-size: 1.5rem;
+    border-top-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    cursor: pointer;
+    background: rgb(53, 4, 233);
+    color: wheat;
+    box-shadow: 2px 4px 8px rgb(149, 240, 122);
+    
+}
+.sumbitBtn:focus{
+outline: none;
+}
+h3{
+    margin-top: 0;
+    margin-left: 4rem;
+    margin-right: 4rem;
+}
+span{
+    color: rgb(231, 15, 15);
+    font-size: 1.5rem;
+
+    
+}
+
+.loading{
+    color: rgb(216, 15, 15);
+}
+.main-section__result{
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    
+}
+.main-section__result-header{
+    margin-bottom: 1rem;
+    text-decoration: underline;
+}
+.main-section__result ul li{
+    font-family: 'Bebas Neue', cursive;
+    color: blue;
+}
+.pincodeInfo{
+    font-size: 1.5rem;
+    color: rgb(5, 28, 233);
+    font-weight: bolder;
+
+}
+#pinErr{
+    color: red;
+    font-size: 1.5rem;
+}
+
+.footer{
+    margin-top: 1rem;
+    background: rgb(15, 235, 7);
+    height:2.5rem;
+    
+
+}
+.warn{
+    color: rgb(28, 11, 126);
+    display: block;
+    font-weight: bolder;
+}
+.footer p{
+    display: inline;
+    margin: 1rem;
+}

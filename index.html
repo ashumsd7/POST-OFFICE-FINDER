@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Post Office</title>
+    <link rel="stylesheet" href="main.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <div id="app">
+        <div class="header">
+            Made by: <i class="fa fa-heart" aria-hidden="true"></i> ASHUTOSH <br>
+            <a class="website" href="https://aat.netlify.app">aat.netlify.app</a>
+        </div>
+
+        <div class="main-section">
+            <input v-if="showForm" v-model="inputPIN" placeholder="6 Digit PINCODE" type="number" class="pincode" id="pincodeID" />
+           
+            <button v-if="showForm" @click="verifyPIN" type="submit" class="sumbitBtn" id="sumbitBtnID">
+                <i class="fa fa-search" aria-hidden="true"></i>    Search
+            </button>
+
+            <br />
+            <p>  </p>
+            <p class="pincodeInfo" v-if="showResult">List of Post Offices of PIN {{inputPIN }}</p>
+            <br>
+            <hr>
+            <br>
+            <strong id="pinErr" v-if="inputError" >Please Type 6 Digit PIN code.
+            </strong>
+           
+            <div v-if="showTagLine" class="">
+                <h3 >Type <span>  PINCODE</span>  and get list of all <span> Post Office </span> of that PINCODE</h4>
+                    <img  src="./images/flag.gif" alt="indian flag" srcset="">
+                   <small class="warn"> ** ONLY INDIAN PINCODE</small>
+            </div>
+           
+            <div v-if="loading" class="loading">
+                <h2>Loading....</h2>
+            </div>
+            <button v-if="showRetry" @click="reload" type="submit" class="sumbitBtn" id="sumbitBtnID">
+                <i class="fa fa-refresh" aria-hidden="true"></i>
+              </button>
+            <div class="main-section__result">
+                <div class="main-section__result-header">
+                    <strong id="info"> {{ noPostOffices}}</strong>
+                </div>
+
+                <ul>
+                    <li v-for="postOffice in postOfficeArray">{{ postOffice}}</li>
+                </ul>
+
+            </div>
+            <br>
+            <hr>
+            <button v-if="showRetry" @click="reload" type="submit" class="sumbitBtn" id="sumbitBtnID">
+              <i class="fa fa-refresh" aria-hidden="true"></i>
+            </button>
+        </div>
+
+        <div class="footer">
+            <p @click="githubClicked" class="main-content__info-btn"> <i class="fa fa-github" aria-hidden="true"></i> </button>        
+                <p @click="quoraClicked" class="main-content__info-btn"> <i class="fa fa-quora" aria-hidden="true"></i> </button>
+                <p @click="twitterClicked" class="main-content__info-btn"> <i class="fa fa-twitter" aria-hidden="true"></i> </button>
+
+        </div>
+        <p><i class="fa fa-clock-o" aria-hidden="true"></i>20 August 2020, Thursday</p>
+    </div>
+</body>
+<script src="main.js"></script>
+
+</html>
